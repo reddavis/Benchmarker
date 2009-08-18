@@ -1,18 +1,37 @@
-= benchmarker
+= Benchmarker
 
-Description goes here.
+This is a very 0.0.1 attempt at building a benchmarking version of autotest.
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but
-   bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+While trying to make your code faster it can be a big pain and time waste having to keep switching to your benchmarks and then back again to your code.
 
+It only works on OSX at the moment (because of fsevents).
+
+== How To Use
+
+Setup - your_file.rb
+  require 'rubygems'
+  require 'benchmarker'
+  require 'benchmark' # rubys benchmark
+
+  Benchmarker.go('path to your code') do
+    n = 2
+
+    Benchmark.bm do |x|
+      x.report { for i in 1..n; a = "1"; end }
+      x.report { n.times do   ; a = "1"; end }
+      x.report { 1.upto(n) do ; a = "1"; end }
+    end
+
+  end
+
+Start It
+  ruby your_file.rb
+  
+Watch It
+  Last Time: ["0.000015", "0.000010", "0.000010"]
+  Now      : ["0.000017", "0.000010", "0.000010"]
+  Change   : ["-13%", "0%", "0%"]
+  
 == Copyright
 
 Copyright (c) 2009 reddavis. See LICENSE for details.
