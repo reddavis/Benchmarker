@@ -6,6 +6,11 @@ While trying to make your code faster it can be a big pain and time waste having
 
 It only works on OSX at the moment (because of fsevents).
 
+== Install
+
+  gem sources -a http://gems.github.com
+  sudo gem install reddavis-benchmarker
+
 == How To Use
 
 Setup - your_file.rb
