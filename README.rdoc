@@ -37,6 +37,10 @@ Watch It
   Now      : ["0.000017", "0.000010", "0.000010"]
   Change   : ["-13%", "0%", "0%"]
   
+== Dependencies
+
+* Fsevents - http://github.com/ymendel/fsevents/tree/master
+  
 == Copyright
 
 Copyright (c) 2009 reddavis. See LICENSE for details.
