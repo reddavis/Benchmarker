@@ -24,7 +24,16 @@ Gem::Specification.new do |s|
      "LICENSE",
      "README.rdoc",
      "Rakefile",
-     "lib/benchmarker.rb"
+     "VERSION",
+     "benchmarker.gemspec",
+     "bin/benchmarker",
+     "example/application.rb",
+     "example/lib/tester.rb",
+     "lib/benchmarker.rb",
+     "lib/ext/kernel.rb",
+     "test/ext/test_kernel.rb",
+     "test/helper.rb",
+     "test/test_benchmarker.rb"
   ]
   s.homepage = %q{http://github.com/reddavis/benchmarker}
   s.rdoc_options = ["--charset=UTF-8"]
